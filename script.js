@@ -6,12 +6,26 @@ menubtn.addEventListener('click',()=>{
     nav.classList.toggle('active');
 });
 
-const btn=document.createElement(".nav-btn");
-let slide=function (manual) {
-    btn[manual].classList.add('active');
+const btns=document.querySelectorAll(".nav-btn");
+const slides=document.querySelectorAll(".image");
+const cont=document.querySelectorAll(".content");
+var side=function(manual){
+  btns.forEach((btn)=>{
+    btn.classList.remove("active");
+  });
+
+  slides.forEach((slide)=>{
+    slide.classList.remove("active");
+  });
+  cont.forEach((conta)=>{
+    conta.classList.remove("active");
+  });
+    btns[manual].classList.add("active");
+    slides[manual].classList.add("active");
+    cont[manual].classList.add("active");
   }
-  btn.forEach((btns,i) => {
-    btns.addEventListener("click",() => {
-        slide(i);
+  btns.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      side(i);
     });
   });

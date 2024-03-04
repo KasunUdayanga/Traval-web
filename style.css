@@ -77,6 +77,10 @@ section{
     color: #ffffff;
     width: 70%;
     margin-top: 50px;
+    display: none ;
+}
+.home .content.active{
+    display: block ;
 }
 .home .content h1{
     font-size: 4em;
@@ -151,16 +155,26 @@ section{
     box-shadow: 0 0 2px rgba(255, 252, 252, 0.732);
     transition: .3s ease;
 }
-.side-nav .nav-btn.active{
-    background: black;
-}
+
 .side-nav .nav-btn:not(:last-child){
     margin-right:10px ;
 }
 .side-nav .nav-btn:hover{
     transform:scale(1.2) ;
 }
-
+.side-nav>.nav-btn.active{
+    background: rgb(6, 1, 1);
+}
+.image {
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+.image.active{
+    clip-path: circle(150.0% at 0 50%);
+    transition: 2s  ease;
+    transition-property:  clip-path;
+}
 @media (max-width:1040px){
     header{
         padding: 12px 20px;
